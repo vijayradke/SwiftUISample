@@ -57,7 +57,7 @@ struct ProfileView: View {
                                 Divider()
                                
                                
-                                ScrollView() {
+                                List {
                                     
                                     VStack(spacing:18) {
                                         
@@ -107,10 +107,12 @@ struct ProfileView: View {
                                             .font(.system(size: 13))
                                         
                                     }
-                                    .padding([.top,.leading,.trailing], 15)
-                                    
+                                    .padding([.top,.leading,.trailing], 5)
+                                    .listRowSeparator(.hidden)
+                                    .listRowBackground(Color.clear)
                                 }
-                                
+                                .listRowSeparator(.hidden)
+                                .listStyle(.plain)
                                 .safeAreaInset(edge: .bottom, spacing: 0) {
                                     Spacer()
                                         .frame(height: 44)
