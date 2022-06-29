@@ -39,6 +39,8 @@
 		35F0F399286C2E89000BB4AA /* IBMPlexSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 35F0F38A286C2E89000BB4AA /* IBMPlexSans-Regular.ttf */; };
 		35F0F39A286C2E89000BB4AA /* IBMPlexSans-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 35F0F38B286C2E89000BB4AA /* IBMPlexSans-ExtraLightItalic.ttf */; };
 		35F0F39B286C2E89000BB4AA /* IBMPlexSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 35F0F38C286C2E89000BB4AA /* IBMPlexSans-Bold.ttf */; };
+		8B4EB83C286C4F9A008A2E5E /* MomentsFilledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4EB83B286C4F9A008A2E5E /* MomentsFilledButton.swift */; };
+		8B4EB83E286C5148008A2E5E /* MomentsWhiteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4EB83D286C5148008A2E5E /* MomentsWhiteButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +78,8 @@
 		35F0F38B286C2E89000BB4AA /* IBMPlexSans-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexSans-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
 		35F0F38C286C2E89000BB4AA /* IBMPlexSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexSans-Bold.ttf"; sourceTree = "<group>"; };
 		35F0F39C286C30A4000BB4AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8B4EB83B286C4F9A008A2E5E /* MomentsFilledButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsFilledButton.swift; sourceTree = "<group>"; };
+		8B4EB83D286C5148008A2E5E /* MomentsWhiteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsWhiteButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +219,8 @@
 				35F0F36C286C2BC3000BB4AA /* Navigation.swift */,
 				35F0F36D286C2BC3000BB4AA /* TextField.swift */,
 				35F0F36E286C2BC3000BB4AA /* Button.swift */,
+				8B4EB83B286C4F9A008A2E5E /* MomentsFilledButton.swift */,
+				8B4EB83D286C5148008A2E5E /* MomentsWhiteButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -330,6 +336,7 @@
 				35F0F378286C2BC4000BB4AA /* String+Extension.swift in Sources */,
 				35F0F371286C2BC4000BB4AA /* Profile.swift in Sources */,
 				35F0F37B286C2BC4000BB4AA /* TextField.swift in Sources */,
+				8B4EB83E286C5148008A2E5E /* MomentsWhiteButton.swift in Sources */,
 				35F0F34A286C2B90000BB4AA /* InMomentApp.swift in Sources */,
 				35F0F375286C2BC4000BB4AA /* DropDownMenus.swift in Sources */,
 				35F0F376286C2BC4000BB4AA /* Validation.swift in Sources */,
@@ -339,6 +346,7 @@
 				35F0F37C286C2BC4000BB4AA /* Button.swift in Sources */,
 				35F0F37A286C2BC4000BB4AA /* Navigation.swift in Sources */,
 				35F0F377286C2BC4000BB4AA /* Enum.swift in Sources */,
+				8B4EB83C286C4F9A008A2E5E /* MomentsFilledButton.swift in Sources */,
 				35F0F379286C2BC4000BB4AA /* View+Extension.swift in Sources */,
 				35F0F370286C2BC4000BB4AA /* Constants.swift in Sources */,
 			);
