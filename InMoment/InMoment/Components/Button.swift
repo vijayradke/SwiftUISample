@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 struct ReusableButton: View {
     
     @Environment(\.colorScheme) var colorScheme
@@ -21,21 +20,19 @@ struct ReusableButton: View {
             Text(title)
                 .frame(height:40)
                 .frame(maxWidth: .infinity)
-            
                 .font(Font.iBMPlexSans(.regular, size: 14))
                 
                 .if(type == .dark ) { content in
                     content.background(
                         Color.black
                     )
-                    .cornerRadius(26)
+                    .cornerRadius(20)
                 }
                 .foregroundColor(type == .dark ? Color.white : Color.black)
                 .if(type == .light ) { view in
                     view.background(
-                        
-                        RoundedRectangle(cornerRadius: 26)
-                            .stroke(.gray, lineWidth: 2)
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(.gray, lineWidth: 1)
                     )
                 }
               
@@ -50,6 +47,9 @@ struct ReusableButton: View {
 
 struct Previews_Button_Previews: PreviewProvider {
     static var previews: some View {
-        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
+        ReusableButton(title: "Title",type:.light)
+        {
+          
+        }
     }
 }

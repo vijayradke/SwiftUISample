@@ -59,7 +59,7 @@ struct ProfileView: View {
                                
                                 List {
                                     
-                                    VStack(spacing:18) {
+                                    VStack(spacing: 18) {
                                         
                                         ProfileHeader(name:"John Wompey")
                                        
@@ -144,28 +144,24 @@ fileprivate func ProfileInfo(name:String) -> some View {
     @Environment(\.presentationMode) var presentationMode
     
     return HStack() {
-        
         VStack{
             Text(name).font(Font.iBMPlexSans(.semiBold, size: 20))
             
             Text("CEO").foregroundColor(Color.gray)
                 .font(Font.iBMPlexSans(.regular, size: 14))
-        }
-        // .frame(width: .infinity, height: 50)
-   
+        }.padding(.all, 10.0)
     }
     .frame(maxWidth: .infinity)
-    
-    .overlay(
+    .overlay(alignment: .leading, content: {
         Button {
             presentationMode.wrappedValue.dismiss()
         } label: {
             Image("left-Arrow")
                 .resizable()
                 .frame(width: 20, height: 20, alignment: .center)
-        }.padding(.leading,15)
-        
-        , alignment: .leading)
+        }
+        .padding(.leading, 15)
+    })
 }
 
 fileprivate func ProfileHeader(name:String) -> some View {
@@ -175,35 +171,32 @@ fileprivate func ProfileHeader(name:String) -> some View {
     @Environment(\.colorScheme) var colorScheme
     return HStack(spacing:20) {
         
-            //.cornerRadius(150)
+        let circleWidth: CGFloat = 120
             AsyncImage(url: URL(string: profileImage)) { image in
                 image.resizable()
             } placeholder: {
-                Text(name.getFirstChar()).frame(width: 150, height: 150)
+                Text(name.getFirstChar()).frame(width: circleWidth, height: circleWidth)
                     .font(Font.iBMPlexSans(.regular, size: 60))
                     .foregroundColor(colorScheme == .dark ? .black : .white)
                     .background(colorScheme == .dark ? .white.opacity(0.8)  : .black)
             }
-            .frame(width: 150, height: 150)
-            .clipShape(RoundedRectangle(cornerRadius: 150))
-        
-            .overlay(Image(systemName: "camera").frame(width: 30, height: 30, alignment: .center)
-                .foregroundColor(colorScheme == .dark ? .white.opacity(0.8)  : .black)
-                     , alignment: .bottomTrailing)
+            .frame(width: circleWidth, height: circleWidth)
+            .clipShape(RoundedRectangle(cornerRadius: circleWidth))
         
         VStack(alignment:.center,spacing: 10) {
-            ReusableButton(title: "SignOut",type:.dark)
-            {
-              
+            
+            MomentsFilledButton(title: "SignOut") {
+                print("SignOut clicked")
             }
             
-            ReusableButton(title: "Leave Feedback",type:.light) {
+            MomentsWhiteButton(title: "Leave Feedback") {
                 print("feedback button tapped")
-                
             }
-            ReusableButton(title: "Launch Tour",type: .light) {
-                
+            
+            MomentsWhiteButton(title: "Launch Tour") {
+                print("Launch Tour")
             }
+            
         }
     }
 }
