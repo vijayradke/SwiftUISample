@@ -43,7 +43,9 @@ struct ProfileView: View {
     @State var txtCountryCode :String = ""
     @State var txtPhone :String = ""
     @State var txtCity :String = ""
-
+    
+    @Environment(\.presentationMode) var presentationMode
+    
     @StateObject private var viewModela = LoginViewModel()
 
     var body: some View {
@@ -53,9 +55,10 @@ struct ProfileView: View {
                             //Color(isNight ? .black : .white).ignoresSafeArea()
                             VStack {
                                 
-                                ProfileInfo(name:"John Wompey")
+                                ProfileInfo(name:"John Wompey", position: "CEO", dismiss: {
+                                    presentationMode.wrappedValue.dismiss()
+                                })
                                 Divider()
-                               
                                
                                 List {
                                     
@@ -65,18 +68,18 @@ struct ProfileView: View {
                                        
                                         VStack(alignment:.leading,spacing:5){
                                             // MARK: Email
-
-                                        ZStack {
+                                            
+                                            ZStack {
                                                 ReusableTextField(title: "Language", placeHolder: "English", errorMessage: viewModel.inlineLanguageError, isDropDownEnabled: true, isTextFieldEnabled: true, isEdit: { isEditing in
                                                     self.editing = isEditing
                                                 }, field: $viewModel.language)
-                                            SuggestionTextFieldMenu(editing: $editing, text: $viewModel.language, verticalOffset: vOffset, horizontalOffset: hOffset)
-                                                .offset(y: -70)
-                                        }
-                                                ReusableTextField(title: "Email", placeHolder: "gouravma@cybage.com", errorMessage: viewModel.inlineEmailError, isDropDownEnabled:false, isTextFieldEnabled:true, isEdit: { isEditing in
-                                                    self.editing = isEditing
-                                                }, field: $viewModel.email)
-                                                
+                                                SuggestionTextFieldMenu(editing: $editing, text: $viewModel.language, verticalOffset: vOffset, horizontalOffset: hOffset)
+                                                    .offset(y: -70)
+                                            }
+                                            ReusableTextField(title: "Email", placeHolder: "gouravma@cybage.com", errorMessage: viewModel.inlineEmailError, isDropDownEnabled:false, isTextFieldEnabled:true, isEdit: { isEditing in
+                                                self.editing = isEditing
+                                            }, field: $viewModel.email)
+                                            
                                             ZStack {
                                                 ReusableTextField(title: "Country code", placeHolder: "United States(1)", errorMessage: viewModel.inlineCountryCodeError, isDropDownEnabled:true, isTextFieldEnabled:true, isEdit: { isEditing in
                                                     self.editing = isEditing
@@ -86,20 +89,20 @@ struct ProfileView: View {
                                                     .offset(y: -60)
                                                 
                                             }
-                                          
-                                                
-                                                ReusableTextField(title: "Phone", placeHolder: "34349345", errorMessage: viewModel.inlinePhoneError, isDropDownEnabled:false, isTextFieldEnabled:true, isEdit: { isEditing in
-                                                    self.editing = isEditing
-                                                }, field: $viewModel.phone)
-                                                
-                                                ReusableTextField(title: "City", placeHolder: "Salt Lanke City, UT", errorMessage: viewModel.inlineCityError, isDropDownEnabled:false, isTextFieldEnabled:true, isEdit: { isEditing in
-                                                    self.editing = isEditing
-                                                }, field: $viewModel.city)
-  
+                                            
+                                            
+                                            ReusableTextField(title: "Phone", placeHolder: "34349345", errorMessage: viewModel.inlinePhoneError, isDropDownEnabled:false, isTextFieldEnabled:true, isEdit: { isEditing in
+                                                self.editing = isEditing
+                                            }, field: $viewModel.phone)
+                                            
+                                            ReusableTextField(title: "City", placeHolder: "Salt Lanke City, UT", errorMessage: viewModel.inlineCityError, isDropDownEnabled:false, isTextFieldEnabled:true, isEdit: { isEditing in
+                                                self.editing = isEditing
+                                            }, field: $viewModel.city)
+                                            
                                         }
-                                      
+                                        
                                         SaveButton(isValid:$viewModel.allsatify) {}
-                                                                            
+                                        
                                         Text("Verson: 1.3")
                                             .font(.system(size: 13))
                                         
@@ -123,7 +126,7 @@ struct ProfileView: View {
                      ,  toolbar:
                                Text("")
            )
-     
+        .navigationViewStyle(StackNavigationViewStyle())
         
     }
 }
@@ -131,72 +134,12 @@ struct ProfileView: View {
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
+        Group {
             ProfileView()
-    }
-}
-
-
-
-
-
-fileprivate func ProfileInfo(name:String) -> some View {
-
-    @Environment(\.presentationMode) var presentationMode
-    
-    return HStack() {
-        VStack{
-            Text(name).font(Font.iBMPlexSans(.semiBold, size: 20))
-            
-            Text("CEO").foregroundColor(Color.gray)
-                .font(Font.iBMPlexSans(.regular, size: 14))
-        }.padding(.all, 10.0)
-    }
-    .frame(maxWidth: .infinity)
-    .overlay(alignment: .leading, content: {
-        Button {
-            presentationMode.wrappedValue.dismiss()
-        } label: {
-            Image("left-Arrow")
-                .resizable()
-                .frame(width: 20, height: 20, alignment: .center)
-        }
-        .padding(.leading, 15)
-    })
-}
-
-fileprivate func ProfileHeader(name:String) -> some View {
-  
-     let profileImage = "https://www.hackingwithswift.com/img/paul-2.png"
-
-    @Environment(\.colorScheme) var colorScheme
-    return HStack(spacing:20) {
-        
-        let circleWidth: CGFloat = 120
-            AsyncImage(url: URL(string: profileImage)) { image in
-                image.resizable()
-            } placeholder: {
-                Text(name.getFirstChar()).frame(width: circleWidth, height: circleWidth)
-                    .font(Font.iBMPlexSans(.regular, size: 60))
-                    .foregroundColor(colorScheme == .dark ? .black : .white)
-                    .background(colorScheme == .dark ? .white.opacity(0.8)  : .black)
-            }
-            .frame(width: circleWidth, height: circleWidth)
-            .clipShape(RoundedRectangle(cornerRadius: circleWidth))
-        
-        VStack(alignment:.center,spacing: 10) {
-            
-            MomentsFilledButton(title: "SignOut") {
-                print("SignOut clicked")
-            }
-            
-            MomentsWhiteButton(title: "Leave Feedback") {
-                print("feedback button tapped")
-            }
-            
-            MomentsWhiteButton(title: "Launch Tour") {
-                print("Launch Tour")
-            }
-            
+                .previewDevice("iphone 11 ")
+            ProfileView()
+                .previewDevice("iPad (9th generation)")
         }
     }
 }
+

@@ -39,6 +39,8 @@
 		35F0F399286C2E89000BB4AA /* IBMPlexSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 35F0F38A286C2E89000BB4AA /* IBMPlexSans-Regular.ttf */; };
 		35F0F39A286C2E89000BB4AA /* IBMPlexSans-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 35F0F38B286C2E89000BB4AA /* IBMPlexSans-ExtraLightItalic.ttf */; };
 		35F0F39B286C2E89000BB4AA /* IBMPlexSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 35F0F38C286C2E89000BB4AA /* IBMPlexSans-Bold.ttf */; };
+		35F9884B286D6BEC00E68422 /* ProfileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F9884A286D6BEC00E68422 /* ProfileInfo.swift */; };
+		35FC01CB286CD3C300F2D844 /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FC01CA286CD3C200F2D844 /* ProfileHeader.swift */; };
 		8B4EB83C286C4F9A008A2E5E /* MomentsFilledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4EB83B286C4F9A008A2E5E /* MomentsFilledButton.swift */; };
 		8B4EB83E286C5148008A2E5E /* MomentsWhiteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4EB83D286C5148008A2E5E /* MomentsWhiteButton.swift */; };
 /* End PBXBuildFile section */
@@ -78,6 +80,8 @@
 		35F0F38B286C2E89000BB4AA /* IBMPlexSans-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexSans-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
 		35F0F38C286C2E89000BB4AA /* IBMPlexSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexSans-Bold.ttf"; sourceTree = "<group>"; };
 		35F0F39C286C30A4000BB4AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		35F9884A286D6BEC00E68422 /* ProfileInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfo.swift; sourceTree = "<group>"; };
+		35FC01CA286CD3C200F2D844 /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
 		8B4EB83B286C4F9A008A2E5E /* MomentsFilledButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsFilledButton.swift; sourceTree = "<group>"; };
 		8B4EB83D286C5148008A2E5E /* MomentsWhiteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsWhiteButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -191,6 +195,8 @@
 			children = (
 				35F0F363286C2BC3000BB4AA /* ProfileView.swift */,
 				35F0F364286C2BC3000BB4AA /* DropDownMenus.swift */,
+				35FC01CA286CD3C200F2D844 /* ProfileHeader.swift */,
+				35F9884A286D6BEC00E68422 /* ProfileInfo.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -338,8 +344,10 @@
 				35F0F37B286C2BC4000BB4AA /* TextField.swift in Sources */,
 				8B4EB83E286C5148008A2E5E /* MomentsWhiteButton.swift in Sources */,
 				35F0F34A286C2B90000BB4AA /* InMomentApp.swift in Sources */,
+				35F9884B286D6BEC00E68422 /* ProfileInfo.swift in Sources */,
 				35F0F375286C2BC4000BB4AA /* DropDownMenus.swift in Sources */,
 				35F0F376286C2BC4000BB4AA /* Validation.swift in Sources */,
+				35FC01CB286CD3C300F2D844 /* ProfileHeader.swift in Sources */,
 				35F0F373286C2BC4000BB4AA /* HomeView.swift in Sources */,
 				35F0F372286C2BC4000BB4AA /* User.swift in Sources */,
 				35F0F374286C2BC4000BB4AA /* ProfileView.swift in Sources */,

@@ -10,20 +10,18 @@ import SwiftUI
 struct MomentsFilledButton: View {
     var title: String
     var action: (() -> Void)
-    
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
     var body: some View {
         Button(action: action) {
             Text(title)
-                .frame(height: 40.0)
+                .frame(height:40)
                 .frame(maxWidth: .infinity)
-                .font(Font.iBMPlexSans(.semiBold, size: 14))
+                .font(Font.iBMPlexSans(.semiBold, size: horizontalSizeClass == .regular ? 18 : 14))
                 .foregroundColor(Color.white)
                 .background {
                     Color.black
                 }
-                .cornerRadius(20.0)
-
-        }
+        }.clipShape(Capsule())
     }
 }
 
@@ -32,5 +30,6 @@ struct MomentsFilledButton_Previews: PreviewProvider {
         MomentsFilledButton(title: "Click Here") {
             print("Clicked")
         }
+        .previewLayout(.fixed(width: 300.0, height: /*@START_MENU_TOKEN@*/100.0/*@END_MENU_TOKEN@*/))
     }
 }
