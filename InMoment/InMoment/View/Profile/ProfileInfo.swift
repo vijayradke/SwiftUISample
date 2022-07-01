@@ -12,7 +12,6 @@ struct ProfileInfo: View {
     var name:String
     var position:String
     
-    
     var dismiss: (() -> Void)
     
     var body: some View {

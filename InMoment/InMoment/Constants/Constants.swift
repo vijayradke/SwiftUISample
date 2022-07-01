@@ -10,5 +10,9 @@ import SwiftUI
 extension Color {
     static let navBarDarkColor = Color("NavBarDarkBlue")
     static let navBarLightColor = Color("NavBarLightBlue")
-    static let btnBgColor = Color("BtnBgColor")
+    static let profileBtnFilled = Color("ProfileBtnFilled")
+    static let profileTxtBorderDark = Color("ProfileTxtBorderDark")
+    static let profileTxtBorderLight = Color("ProfileTxtBorderLight")
+    static let profileTxtBg = Color("ProfileTxtBg")
+    static let profileBtnSaveDisable = Color("ProfileBtnSaveDisable")
 }

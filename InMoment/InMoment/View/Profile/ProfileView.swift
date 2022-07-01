@@ -7,26 +7,6 @@
 
 import SwiftUI
 
-
-
-struct SaveButton: View {
-    @Binding var isValid:Bool
-    var clicked: (() -> Void)
-    var body: some View {
-        Button(action: clicked) {
-            Text("Save")
-                
-               .frame(width: 150,height:40)
-                .foregroundColor(Color.white)
-                .background(isValid ? Color.black : Color.gray)
-                .cornerRadius(20)
-                .font(.system(size: 15))
-               
-        }.disabled(isValid ? false : true)
-    }
-}
-
-
 struct ProfileView: View {
     
     @StateObject var viewModel = User()
@@ -66,54 +46,51 @@ struct ProfileView: View {
                                         
                                         ProfileHeader(name:"John Wompey")
                                        
-                                        VStack(alignment:.leading,spacing:5){
+                                        VStack(alignment:.leading,spacing:5) {
                                             // MARK: Email
                                             
                                             ZStack {
-                                                ReusableTextField(title: "Language", placeHolder: "English", errorMessage: viewModel.inlineLanguageError, isDropDownEnabled: true, isTextFieldEnabled: true, isEdit: { isEditing in
+                                                ReusableTextField(title: "Language", placeHolder: "English", errorMessage: viewModel.inlineLanguageError, textFieldType: .disabled, isEdit: { isEditing in
                                                     self.editing = isEditing
                                                 }, field: $viewModel.language)
                                                 SuggestionTextFieldMenu(editing: $editing, text: $viewModel.language, verticalOffset: vOffset, horizontalOffset: hOffset)
                                                     .offset(y: -70)
                                             }
-                                            ReusableTextField(title: "Email", placeHolder: "gouravma@cybage.com", errorMessage: viewModel.inlineEmailError, isDropDownEnabled:false, isTextFieldEnabled:true, isEdit: { isEditing in
+                                            
+                                            ReusableTextField(title: "Email", placeHolder: "gouravma@cybage.com", errorMessage: viewModel.inlineEmailError, textFieldType: .disabled, isEdit: { isEditing in
                                                 self.editing = isEditing
                                             }, field: $viewModel.email)
                                             
                                             ZStack {
-                                                ReusableTextField(title: "Country code", placeHolder: "United States(1)", errorMessage: viewModel.inlineCountryCodeError, isDropDownEnabled:true, isTextFieldEnabled:true, isEdit: { isEditing in
+                                                ReusableTextField(title: "Country code", placeHolder: "United States(1)", errorMessage: viewModel.inlineCountryCodeError, textFieldType: .dropdown, isEdit: { isEditing in
                                                     self.editing = isEditing
                                                 }, field:$viewModel.countryCode)
                                                 
                                                 SuggestionTextFieldMenu(editing: $editing, text: $viewModel.countryCode, verticalOffset: 20, horizontalOffset: hOffset)
                                                     .offset(y: -60)
-                                                
                                             }
-                                            
-                                            
-                                            ReusableTextField(title: "Phone", placeHolder: "34349345", errorMessage: viewModel.inlinePhoneError, isDropDownEnabled:false, isTextFieldEnabled:true, isEdit: { isEditing in
+                                        
+                                            ReusableTextField(title: "Phone", placeHolder: "34349345", errorMessage: viewModel.inlinePhoneError, textFieldType: .editable, isEdit: { isEditing in
                                                 self.editing = isEditing
                                             }, field: $viewModel.phone)
                                             
-                                            ReusableTextField(title: "City", placeHolder: "Salt Lanke City, UT", errorMessage: viewModel.inlineCityError, isDropDownEnabled:false, isTextFieldEnabled:true, isEdit: { isEditing in
+                                            ReusableTextField(title: "City", placeHolder: "Salt Lanke City, UT", errorMessage: viewModel.inlineCityError, textFieldType: .dropdown, isEdit: { isEditing in
                                                 self.editing = isEditing
                                             }, field: $viewModel.city)
-                                            
                                         }
                                         
-                                        SaveButton(isValid:$viewModel.allsatify) {}
+                                        MomentsButton(title: "Save", type: .save) {
+                                            
+                                        }
+                                        .disabled(true)
                                         
-                                        Text("Verson: 1.3")
-                                            .font(.system(size: 13))
-                                        
-                                        Text("2022 InMoment, Inc. All rights reserved. \nUnauthorized access is prohibited").multilineTextAlignment(.center)
-                                            .font(.system(size: 13))
-                                        
+                                        ProfileFooter()
                                     }
                                     .padding([.top,.leading,.trailing], 5)
                                     .listRowSeparator(.hidden)
                                     .listRowBackground(Color.clear)
                                 }
+                              
                                 .listRowSeparator(.hidden)
                                 .listStyle(.plain)
                                 .safeAreaInset(edge: .bottom, spacing: 0) {
@@ -122,6 +99,7 @@ struct ProfileView: View {
                                    
                                 }
                             }
+                      
                         }
                      ,  toolbar:
                                Text("")
@@ -137,8 +115,8 @@ struct ProfileView_Previews: PreviewProvider {
         Group {
             ProfileView()
                 .previewDevice("iphone 11 ")
-            ProfileView()
-                .previewDevice("iPad (9th generation)")
+           // ProfileView()
+               // .previewDevice("iPad (9th generation)")
         }
     }
 }

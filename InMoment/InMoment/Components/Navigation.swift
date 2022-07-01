@@ -14,7 +14,9 @@ struct CustomNavBar<Content,Toolbar>: View where Content: View,Toolbar:View {
     let content: Content
     let toolbar:Toolbar
     
+ 
     var body: some View {
+        
         NavigationView {
             ZStack {
                 VStack {
@@ -22,8 +24,6 @@ struct CustomNavBar<Content,Toolbar>: View where Content: View,Toolbar:View {
                     .background(
                         LinearGradient(gradient: Gradient(colors: [.navBarLightColor,.navBarDarkColor]), startPoint: .leading, endPoint: .trailing)
                     )
-                    
-                  
                     .ignoresSafeArea(edges: .top)
                     .frame(height: 0)
                     
@@ -32,8 +32,7 @@ struct CustomNavBar<Content,Toolbar>: View where Content: View,Toolbar:View {
                 }
                 content
             }
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationBarTitle(Text(title).font(Font.iBMPlexSans(.semiBold, size: 20)))
+            .navigationBarTitle(Text(title).font(Font.iBMPlexSans(.semiBold, size: 20)), displayMode: .inline)
             .navigationBarTitleTextColor(.white)
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {

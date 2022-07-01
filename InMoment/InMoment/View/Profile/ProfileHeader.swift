@@ -15,11 +15,14 @@ struct ProfileHeader: View {
    @Environment(\.horizontalSizeClass) var horizontalSizeClass
    @Environment(\.colorScheme) var colorScheme
     
+    @State private var image = UIImage()
+    @State private var showSheet = false
+    
     var body: some View {
         
-        HStack(spacing:10) {
-           
-           let circleWidth: CGFloat = horizontalSizeClass == .regular ? 150 : 130
+        HStack(spacing:20) {
+        
+              let circleWidth: CGFloat = horizontalSizeClass == .regular ? 150 : 130
            
                AsyncImage(url: URL(string: profileImage)) { image in
                    image.resizable()
@@ -31,28 +34,45 @@ struct ProfileHeader: View {
                }
                .frame(width: circleWidth, height: circleWidth)
                .clipShape(Circle())
-           
+               .overlay(
+                Button(action: {
+                    //showSheet = true
+                }, label: {
+                    Image("photo-camera")
+                        .resizable()
+                        .frame(width: 20, height: 20, alignment: .center)
+                })
+                , alignment: .bottomTrailing)
+               
            VStack(alignment:.center,spacing: 10) {
                
-               MomentsFilledButton(title: "SignOut") {
+               MomentsButton(title: "SignOut",type: .filled, action:  {
                    print("SignOut clicked")
-               }
+               })
                
-               MomentsWhiteButton(title: "Leave Feedback") {
+               MomentsButton(title: "Leave Feedback",type: .bordered) {
                    print("feedback button tapped")
                }
                
-               MomentsWhiteButton(title: "Launch Tour") {
+               MomentsButton(title: "Launch Tour",type: .bordered) {
                    print("Launch Tour")
                }
                
            }
        }.padding(.horizontal,horizontalSizeClass == .regular ? 50 : 0)
+            .sheet(isPresented: $showSheet) {
+                            // Pick an image from the photo library:
+                        ImagePicker(sourceType: .photoLibrary, selectedImage: self.$image)
+
+                            //  If you wish to take a photo from camera instead:
+                            // ImagePicker(sourceType: .camera, selectedImage: self.$image)
+                    }
     }
 }
 
 struct ProfileHeader_Previews: PreviewProvider {
     static var previews: some View {
         ProfileHeader(name:"Gourav")
+            .previewLayout(.sizeThatFits)
     }
 }
