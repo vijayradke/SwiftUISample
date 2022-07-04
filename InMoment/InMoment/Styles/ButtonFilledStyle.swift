@@ -35,7 +35,7 @@ struct ButtonFilledStyle: ButtonStyle {
             .frame(maxWidth: .infinity)
             .font(Font.iBMPlexSans(.regular, size: horizontalSizeClass == .regular ? 18 : 14))
             .foregroundColor(Color.white)
-            .background(Color.black, in: Capsule())
+            .background(Color.profileBtnFilled, in: Capsule())
             .clipShape(Capsule())
             .scaleEffect(configuration.isPressed ? 0.98 : 1)
     }
@@ -52,7 +52,7 @@ extension ButtonStyle where Self == ButtonFilledStyle {
 struct ButtonFilledStyle_Previews: PreviewProvider {
     static var previews: some View {
         Button(action: {}) {
-            Text("Common Button")
+            Text("Click Here")
         }
         .previewLayout(.sizeThatFits)
         

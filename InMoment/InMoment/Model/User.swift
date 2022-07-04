@@ -31,9 +31,30 @@ class User:  ObservableObject {
     
     @Published var isValid = false
     @Published var allsatify = false
+    
     private var cancellableSet: Set<AnyCancellable> = []
     
+    var countries : [String] = []
+
+    func getCountries() {
+        if let fileLocation = Bundle.main.url(forResource: "Countries", withExtension: "json") {
+
+            // do catch in case of error
+            do {
+                let data = try Data(contentsOf: fileLocation)
+                let jsonDecoder = JSONDecoder()
+                let dataFromJson = try jsonDecoder.decode([[String]].self, from: data)
+               print(dataFromJson)
+                self.countries = dataFromJson.map({$0[0]})
+            } catch {
+                print(error)
+            }
+        }
+    }
+    
     init(){
+        
+        getCountries()
         
         validatedEmail
             .dropFirst()
@@ -119,11 +140,11 @@ class User:  ObservableObject {
             .assign(to: \.inlinePhoneError, on: self)
             .store(in: &cancellableSet)
         
-//        
-//        readyToSubmit
-//            .receive(on: RunLoop.main)
-//            .assign(to: \.isValid, on: self)
-//            .store(in: &cancellableSet)
+        
+        readyToSubmit
+            .receive(on: RunLoop.main)
+            .assign(to: \.isValid, on: self)
+            .store(in: &cancellableSet)
     }
     
     //MARK: Define our validation streams
@@ -216,40 +237,40 @@ class User:  ObservableObject {
     }
     
     
-//    //MARK: Combining the results
-//    var readyToSubmit: AnyPublisher<Bool, Never> {
-//        return Publishers.CombineLatest4(validatedCountryCode,validatedPhone,validatedCity,validatedLanguage)
-//            .map {countryCode, phone, city,language in
-//                let conditions = [countryCode,phone,city,language]
-////
+    //MARK: Combining the results
+    var readyToSubmit: AnyPublisher<Bool, Never> {
+        return Publishers.CombineLatest4(validatedCountryCode,validatedPhone,validatedCity,validatedLanguage)
+            .map {countryCode, phone, city,language in
+                let conditions = [countryCode,phone,city,language]
 //
-//                let allValid = conditions.allSatisfy { txt in
-//                    return txt == .valid
+
+                let allValid = conditions.allSatisfy { txt in
+                    return txt == .valid
+                }
+                print("all valid \(allValid)")
+                return allValid
+
+//                return false
+
+//                if email == .valid {
+//                    return true
+//                }else if city == .valid {
+//                    return true
+//                }else if language == .valid {
+//                    return true
+//                }else if countryCode == .valid {
+//                    return true
+//                }else if validatedPhone == .valid {
+//                    return true
 //                }
-//                print("all valid \(allValid)")
-//                return allValid
-//
-////                return false
-//
-////                if email == .valid {
-////                    return true
-////                }else if city == .valid {
-////                    return true
-////                }else if language == .valid {
-////                    return true
-////                }else if countryCode == .valid {
-////                    return true
-////                }else if validatedPhone == .valid {
-////                    return true
-////                }
-////                else {
-////                    return false
-////                }
-//
-//             //  return (countryCode == .valid && validatePhone == .valid)
-//            }
-//            .eraseToAnyPublisher()
-//    }
+//                else {
+//                    return false
+//                }
+
+             //  return (countryCode == .valid && validatePhone == .valid)
+            }
+            .eraseToAnyPublisher()
+    }
 
     var  publisher1 :AnyPublisher<Bool,Never> {
 

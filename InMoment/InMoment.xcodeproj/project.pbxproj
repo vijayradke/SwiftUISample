@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		350020EA286F32A300B4E085 /* Countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 350020E9286F32A300B4E085 /* Countries.json */; };
 		350DE0E8286DA07500303A1D /* ButtonBorderedStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350DE0E7286DA07500303A1D /* ButtonBorderedStyle.swift */; };
 		350DE0EA286DA79400303A1D /* ProfileTextfieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350DE0E9286DA79400303A1D /* ProfileTextfieldStyle.swift */; };
+		3518DA862871E11200D6ADA0 /* SomeKeyword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3518DA852871E11200D6ADA0 /* SomeKeyword.swift */; };
 		35559AD5286D7B21002B0964 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35559AD4286D7B21002B0964 /* ImagePicker.swift */; };
 		35F0F34A286C2B90000BB4AA /* InMomentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F0F349286C2B90000BB4AA /* InMomentApp.swift */; };
 		35F0F34E286C2B97000BB4AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35F0F34D286C2B97000BB4AA /* Assets.xcassets */; };
@@ -41,16 +43,22 @@
 		35F0F399286C2E89000BB4AA /* IBMPlexSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 35F0F38A286C2E89000BB4AA /* IBMPlexSans-Regular.ttf */; };
 		35F0F39A286C2E89000BB4AA /* IBMPlexSans-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 35F0F38B286C2E89000BB4AA /* IBMPlexSans-ExtraLightItalic.ttf */; };
 		35F0F39B286C2E89000BB4AA /* IBMPlexSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 35F0F38C286C2E89000BB4AA /* IBMPlexSans-Bold.ttf */; };
-		35F9884B286D6BEC00E68422 /* ProfileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F9884A286D6BEC00E68422 /* ProfileInfo.swift */; };
-		35FC01CB286CD3C300F2D844 /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FC01CA286CD3C200F2D844 /* ProfileHeader.swift */; };
+		35F9884B286D6BEC00E68422 /* ProfileInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F9884A286D6BEC00E68422 /* ProfileInfoView.swift */; };
+		35FC01CB286CD3C300F2D844 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FC01CA286CD3C200F2D844 /* ProfileHeaderView.swift */; };
 		35FFA403286E283800400883 /* ButtonDisabledStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FFA402286E283800400883 /* ButtonDisabledStyle.swift */; };
-		35FFA405286E2F5100400883 /* ProfileFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FFA404286E2F5100400883 /* ProfileFooter.swift */; };
+		35FFA405286E2F5100400883 /* ProfileFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FFA404286E2F5100400883 /* ProfileFooterView.swift */; };
+		35FFA407286EC5B400400883 /* AlertToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FFA406286EC5B400400883 /* AlertToast.swift */; };
+		35FFA409286ECE7300400883 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FFA408286ECE7300400883 /* ActivityIndicator.swift */; };
+		35FFA40B286ECE7A00400883 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FFA40A286ECE7A00400883 /* BlurView.swift */; };
 		8B4EB83C286C4F9A008A2E5E /* MomentsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4EB83B286C4F9A008A2E5E /* MomentsButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		350020E9286F32A300B4E085 /* Countries.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Countries.json; sourceTree = "<group>"; };
 		350DE0E7286DA07500303A1D /* ButtonBorderedStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonBorderedStyle.swift; sourceTree = "<group>"; };
 		350DE0E9286DA79400303A1D /* ProfileTextfieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTextfieldStyle.swift; sourceTree = "<group>"; };
+		3518DA7128717BE800D6ADA0 /* InMoment.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = InMoment.entitlements; sourceTree = "<group>"; };
+		3518DA852871E11200D6ADA0 /* SomeKeyword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeKeyword.swift; sourceTree = "<group>"; };
 		35559AD4286D7B21002B0964 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		35F0F346286C2B90000BB4AA /* InMoment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InMoment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35F0F349286C2B90000BB4AA /* InMomentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMomentApp.swift; sourceTree = "<group>"; };
@@ -85,10 +93,13 @@
 		35F0F38B286C2E89000BB4AA /* IBMPlexSans-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexSans-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
 		35F0F38C286C2E89000BB4AA /* IBMPlexSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexSans-Bold.ttf"; sourceTree = "<group>"; };
 		35F0F39C286C30A4000BB4AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		35F9884A286D6BEC00E68422 /* ProfileInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfo.swift; sourceTree = "<group>"; };
-		35FC01CA286CD3C200F2D844 /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
+		35F9884A286D6BEC00E68422 /* ProfileInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoView.swift; sourceTree = "<group>"; };
+		35FC01CA286CD3C200F2D844 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		35FFA402286E283800400883 /* ButtonDisabledStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonDisabledStyle.swift; sourceTree = "<group>"; };
-		35FFA404286E2F5100400883 /* ProfileFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFooter.swift; sourceTree = "<group>"; };
+		35FFA404286E2F5100400883 /* ProfileFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFooterView.swift; sourceTree = "<group>"; };
+		35FFA406286EC5B400400883 /* AlertToast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertToast.swift; sourceTree = "<group>"; };
+		35FFA408286ECE7300400883 /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		35FFA40A286ECE7A00400883 /* BlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		8B4EB83B286C4F9A008A2E5E /* MomentsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,6 +133,9 @@
 		35F0F348286C2B90000BB4AA /* InMoment */ = {
 			isa = PBXGroup;
 			children = (
+				3518DA852871E11200D6ADA0 /* SomeKeyword.swift */,
+				3518DA7128717BE800D6ADA0 /* InMoment.entitlements */,
+				35FFA40E286F1E9B00400883 /* Json */,
 				35F0F39C286C30A4000BB4AA /* Info.plist */,
 				35F0F36B286C2BC3000BB4AA /* Components */,
 				35F0F359286C2BC3000BB4AA /* Constants */,
@@ -204,9 +218,9 @@
 			children = (
 				35F0F363286C2BC3000BB4AA /* ProfileView.swift */,
 				35F0F364286C2BC3000BB4AA /* DropDownMenus.swift */,
-				35FC01CA286CD3C200F2D844 /* ProfileHeader.swift */,
-				35F9884A286D6BEC00E68422 /* ProfileInfo.swift */,
-				35FFA404286E2F5100400883 /* ProfileFooter.swift */,
+				35FC01CA286CD3C200F2D844 /* ProfileHeaderView.swift */,
+				35F9884A286D6BEC00E68422 /* ProfileInfoView.swift */,
+				35FFA404286E2F5100400883 /* ProfileFooterView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -214,6 +228,9 @@
 		35F0F365286C2BC3000BB4AA /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				35FFA408286ECE7300400883 /* ActivityIndicator.swift */,
+				35FFA40A286ECE7A00400883 /* BlurView.swift */,
+				35FFA406286EC5B400400883 /* AlertToast.swift */,
 				35F0F366286C2BC3000BB4AA /* Validation.swift */,
 				35F0F367286C2BC3000BB4AA /* Enum.swift */,
 				35559AD4286D7B21002B0964 /* ImagePicker.swift */,
@@ -260,6 +277,14 @@
 				35F0F38C286C2E89000BB4AA /* IBMPlexSans-Bold.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		35FFA40E286F1E9B00400883 /* Json */ = {
+			isa = PBXGroup;
+			children = (
+				350020E9286F32A300B4E085 /* Countries.json */,
+			);
+			path = Json;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,6 +349,7 @@
 				35F0F394286C2E89000BB4AA /* IBMPlexSans-Thin.ttf in Resources */,
 				35F0F39A286C2E89000BB4AA /* IBMPlexSans-ExtraLightItalic.ttf in Resources */,
 				35F0F392286C2E89000BB4AA /* IBMPlexSans-LightItalic.ttf in Resources */,
+				350020EA286F32A300B4E085 /* Countries.json in Resources */,
 				35F0F391286C2E89000BB4AA /* OFL.txt in Resources */,
 				35F0F395286C2E89000BB4AA /* IBMPlexSans-ThinItalic.ttf in Resources */,
 				35F0F351286C2B97000BB4AA /* Preview Assets.xcassets in Resources */,
@@ -351,13 +377,17 @@
 				35F0F378286C2BC4000BB4AA /* String+Extension.swift in Sources */,
 				350DE0EA286DA79400303A1D /* ProfileTextfieldStyle.swift in Sources */,
 				35F0F371286C2BC4000BB4AA /* ButtonFilledStyle.swift in Sources */,
+				35FFA409286ECE7300400883 /* ActivityIndicator.swift in Sources */,
 				35F0F37B286C2BC4000BB4AA /* ProfileTextfield.swift in Sources */,
 				35F0F34A286C2B90000BB4AA /* InMomentApp.swift in Sources */,
-				35F9884B286D6BEC00E68422 /* ProfileInfo.swift in Sources */,
+				35F9884B286D6BEC00E68422 /* ProfileInfoView.swift in Sources */,
 				35F0F375286C2BC4000BB4AA /* DropDownMenus.swift in Sources */,
-				35FFA405286E2F5100400883 /* ProfileFooter.swift in Sources */,
+				35FFA405286E2F5100400883 /* ProfileFooterView.swift in Sources */,
 				35F0F376286C2BC4000BB4AA /* Validation.swift in Sources */,
-				35FC01CB286CD3C300F2D844 /* ProfileHeader.swift in Sources */,
+				3518DA862871E11200D6ADA0 /* SomeKeyword.swift in Sources */,
+				35FC01CB286CD3C300F2D844 /* ProfileHeaderView.swift in Sources */,
+				35FFA40B286ECE7A00400883 /* BlurView.swift in Sources */,
+				35FFA407286EC5B400400883 /* AlertToast.swift in Sources */,
 				35F0F373286C2BC4000BB4AA /* HomeView.swift in Sources */,
 				35F0F372286C2BC4000BB4AA /* User.swift in Sources */,
 				350DE0E8286DA07500303A1D /* ButtonBorderedStyle.swift in Sources */,
@@ -494,6 +524,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = InMoment/InMoment.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"InMoment/Preview Content\"";
@@ -514,6 +545,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.swiftUI.InMoment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -525,6 +557,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = InMoment/InMoment.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"InMoment/Preview Content\"";
@@ -545,6 +578,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.swiftUI.InMoment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

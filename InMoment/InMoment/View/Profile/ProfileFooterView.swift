@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ProfileFooter: View {
+struct ProfileFooterView: View {
     
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     
@@ -24,6 +24,6 @@ struct ProfileFooter: View {
 
 struct ProfileFooter_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileFooter()
+        ProfileFooterView()
     }
 }

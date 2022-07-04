@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ProfileHeader: View {
+struct ProfileHeaderView: View {
     
     var name:String
     
@@ -30,7 +30,7 @@ struct ProfileHeader: View {
                    Text(name.getFirstChar()).frame(width: circleWidth, height: circleWidth)
                        .font(Font.iBMPlexSans(.regular, size: 60))
                        .foregroundColor(colorScheme == .dark ? .black : .white)
-                       .background(colorScheme == .dark ? .white.opacity(0.8)  : .black)
+                       .background(Color.profileBtnFilled)
                }
                .frame(width: circleWidth, height: circleWidth)
                .clipShape(Circle())
@@ -72,7 +72,7 @@ struct ProfileHeader: View {
 
 struct ProfileHeader_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileHeader(name:"Gourav")
+        ProfileHeaderView(name:"Gourav")
             .previewLayout(.sizeThatFits)
     }
 }

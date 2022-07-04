@@ -35,6 +35,7 @@ struct ProfileTextfieldStyle: TextFieldStyle {
                 .frame(height: 40, alignment: .center)
                 .padding(.horizontal)
                 .cornerRadius(20)
+                
     }
 }
 

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MomentsButton: View {
     var title: String
-    var type :MomentButtonType = .bordered
+    var type :MomentButtonType = .save
     var action: (() -> Void)
     
     var body: some View {
@@ -36,7 +36,9 @@ struct MomentsButton: View {
 }
 
 struct MomentsFilledButton_Previews: PreviewProvider {
+ 
     static var previews: some View {
+       
         MomentsButton(title: "Click Here") {
             print("Clicked")
         }

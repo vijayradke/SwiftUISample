@@ -38,7 +38,7 @@ struct DropDownMenus: View {
                         .padding(.horizontal, 25)
                         
                 }
-                SuggestionTextFieldMenu(editing: $editing, text: $inputText, verticalOffset: vOffset, horizontalOffset: hOffset)
+                SuggestionTextFieldMenu(names: ["A","B"], editing: $editing, text: $inputText, verticalOffset: vOffset, horizontalOffset: hOffset)
             }
             
             Group {
@@ -63,9 +63,13 @@ struct DropDownMenus_Previews: PreviewProvider {
 }
 
 
+
 public struct SuggestionTextFieldMenu: View {
     
-    @State var names: [String] = ["Apple","Peach","Orange","Banana", "Melon", "Watermelon","Mandarin","Mulberries","Lemon","Lime","Loquat","Longan","Lychee","Grape","Pear","Kiwi","Mango"]
+    @State var names: [String]
+    
+   // @ObservedObject var fetch = CountriesViewModel()
+  
     @Binding var editing: Bool
     @Binding var inputText: String
     @State var verticalOffset: CGFloat
@@ -76,19 +80,24 @@ public struct SuggestionTextFieldMenu: View {
             return names.filter { $0.contains(inputText) && $0.prefix(1) == inputText.prefix(1) } },
         set: { _ in })
     }
+
     
-    public init(editing: Binding<Bool>, text: Binding<String>) {
+    public init(names:[String],editing: Binding<Bool>, text: Binding<String>) {
+        self.names = names
         self._editing = editing
         self._inputText = text
         self.verticalOffset = 0
         self.horizontalOffset = 0
+       // print(fetch.countries)
     }
     
-    public init(editing: Binding<Bool>, text: Binding<String>, verticalOffset: CGFloat, horizontalOffset: CGFloat) {
+    public init(names:[String],editing: Binding<Bool>, text: Binding<String>, verticalOffset: CGFloat, horizontalOffset: CGFloat) {
+        self.names = names
         self._editing = editing
         self._inputText = text
         self.verticalOffset = verticalOffset
         self.horizontalOffset = horizontalOffset
+       
     }
     
     public var body: some View {
@@ -98,12 +107,13 @@ public struct SuggestionTextFieldMenu: View {
                 ForEach(filteredTexts.wrappedValue, id: \.self) { textSearched in
                     
                     Text(textSearched)
+                        .font(Font.iBMPlexSans(.regular, size: 16))
                         .padding(.horizontal, 25)
                         .padding(.vertical, 25)
                         .frame(minWidth: 0,
                                maxWidth: .infinity,
                                minHeight: 0,
-                               maxHeight: 50,
+                               maxHeight: 55,
                                alignment: .leading)
                         .contentShape(Rectangle())
                         .onTapGesture(perform: {
@@ -111,26 +121,36 @@ public struct SuggestionTextFieldMenu: View {
                             editing = false
                             self.endTextEditing()
                         })
+                        .background(inputText == textSearched ? Color.dropDownSelectedBg : .white)
+                    
+                        .if(inputText == textSearched) { view in
+                            view
+                                .overlay(alignment: .trailing) {
+                                Image("checklist").resizable()
+                                    .frame(width: 20, height: 20, alignment: .center)
+                                    .foregroundColor(Color.dropDownSelectedIcon)
+                                    .padding(.trailing, 20)
+                                }
+                        }
                     Divider()
-                        .padding(.horizontal, 10)
+                        
                 }
             }
         }.background(Color.white)
         
-        .cornerRadius(15)
+        .cornerRadius(10)
         .foregroundColor(Color(.black))
         .ignoresSafeArea()
         .frame(maxWidth: .infinity,
                minHeight: 0,
-               maxHeight: 50 * CGFloat( (filteredTexts.wrappedValue.count > 3 ? 3: filteredTexts.wrappedValue.count)))
+               maxHeight: 55 * CGFloat( (filteredTexts.wrappedValue.count > 3 ? 3: filteredTexts.wrappedValue.count)))
         .shadow(radius: 4)
-       // .padding(.horizontal, 25)
+        .padding(.horizontal, 0)
         .offset(x: horizontalOffset, y: verticalOffset)
         .isHidden(!editing, remove: !editing)
         
     }
-    
-    
+
 }
 
 
@@ -140,7 +160,7 @@ struct SuggestionTextFieldMenu_Previews: PreviewProvider {
             StatefulPreviewWrapper("lemon") {text in
                 VStack {
                     TextField("Title", text: text)
-                    SuggestionTextFieldMenu(editing: .constant(true), text: text)
+                    SuggestionTextFieldMenu(names: [], editing: .constant(true), text: text)
                 }
                 
             }

@@ -55,7 +55,7 @@ extension ButtonStyle where Self == ButtonBorderedStyle {
 struct ButtonBorderedStyle_Previews: PreviewProvider {
     static var previews: some View {
         Button(action: {}) {
-            Text("Common Button")
+            Text("Click Here")
         }
         .previewLayout(.sizeThatFits)
         

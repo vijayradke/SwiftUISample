@@ -7,7 +7,9 @@
 
 import SwiftUI
 
-struct ProfileInfo: View {
+
+
+struct ProfileInfoView: View {
     
     var name:String
     var position:String
@@ -41,9 +43,9 @@ struct ProfileInfo: View {
 
 struct ProfileInfo_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileInfo(name: "David", position: "CEO", dismiss: {
+        ProfileInfoView(name: "David", position: "CEO", dismiss: {
             
         })
-            .previewLayout(.fixed(width: 400.0, height: /*@START_MENU_TOKEN@*/100.0/*@END_MENU_TOKEN@*/))
+        .previewLayout(.fixed(width: 400.0, height: /*@START_MENU_TOKEN@*/100.0/*@END_MENU_TOKEN@*/))
     }
 }

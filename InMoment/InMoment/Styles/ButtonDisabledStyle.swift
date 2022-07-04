@@ -54,7 +54,7 @@ extension ButtonStyle where Self == ButtonDisabledStyle {
 struct ButtonDisabledStyle_Previews: PreviewProvider {
     static var previews: some View {
         Button(action: {}) {
-            Text("Common Button")
+            Text("Click Here")
         }
         .previewLayout(.sizeThatFits)
         .disabled(false)

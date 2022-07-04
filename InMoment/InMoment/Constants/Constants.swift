@@ -15,4 +15,6 @@ extension Color {
     static let profileTxtBorderLight = Color("ProfileTxtBorderLight")
     static let profileTxtBg = Color("ProfileTxtBg")
     static let profileBtnSaveDisable = Color("ProfileBtnSaveDisable")
+    static let dropDownSelectedBg = Color("DropDownSelectedBg")
+    static let dropDownSelectedIcon = Color("DropDownSelectedIcon")
 }
